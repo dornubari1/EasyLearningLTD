@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Services";
+}
+
+<p>Please Select your preferred service from the dropdown list</p>
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn" background-color: #4CAF50;>Services</button>
+    <div id="myDropdown" class="dropdown-content">
+
+        <a var href="">Tutor Registration</a>
+        <a href="https://localhost:44318/Home/TutorRegistration">Aboutkhlhh</a>
+        @*<a href="@Html.Partial("TutorRegistration")">Tutor Registration</a>*@
+        
+    </div>
+</div>
+
+@*@{ if (string service = "home")
+
+        Html.Partial("TutorRegistration");
+
+    else
+        Html.Partial("StudentServices");
+}*@
+
+
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
