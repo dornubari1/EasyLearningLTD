@@ -46,15 +46,15 @@ namespace EasyLearningLTD.Controllers
         }
 
         [Authorize]
-        public PartialViewResult TutorRegistration()
+        public IActionResult TutorRegistration()
         {
-            return PartialView();
+            return View();
         }
 
         [Authorize]
-        public PartialViewResult StudentServices()
+        public IActionResult StudentServices()
         {
-            return PartialView();
+            return View();
         }
 
 
