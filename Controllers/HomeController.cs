@@ -45,11 +45,6 @@ namespace EasyLearningLTD.Controllers
             return View();
         }
 
-        [Authorize]
-        public IActionResult TutorRegistration()
-        {
-            return View();
-        }
 
         [Authorize]
         public IActionResult StudentServices()

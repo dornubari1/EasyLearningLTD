@@ -43,6 +43,19 @@ namespace EasyLearningLTD
                 facebookOptions.Scope.Add("public_profile");
                 facebookOptions.Fields.Add("picture");
             });
+
+            //    services.AddAuthentication().AddGitHub(GitubOptions=>)
+            //        {
+            //        GitHubOptions.AppId = Configuration["Authentication:GitHub:AppId"];
+            //        GitHubOptions.AppSecret = Configuration["Authentication:GitHub:AppSecret"];
+            //    });
+
+            //    services.AddAuthentication(SetAppAuthentication)
+            //            .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
+            //                       SetAppCookieAuthentication)
+
+            //            .AddGitHub(GitHubAuthenticationDefaults.AuthenticationScheme,
+            //                        SetGitHubAuthentication);
         }
 
 
