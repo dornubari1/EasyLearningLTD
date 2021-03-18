@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNet.Security.OAuth.GitHub;
 
 namespace EasyLearningLTD
 {
@@ -44,18 +45,13 @@ namespace EasyLearningLTD
                 facebookOptions.Fields.Add("picture");
             });
 
-            //    services.AddAuthentication().AddGitHub(GitubOptions=>)
-            //        {
-            //        GitHubOptions.AppId = Configuration["Authentication:GitHub:AppId"];
-            //        GitHubOptions.AppSecret = Configuration["Authentication:GitHub:AppSecret"];
-            //    });
+            services.AddAuthentication().AddGitHub(GitHubAuthenticationOptions =>
+            {
+                GitHubAuthenticationOptions.ClientId = "0d4d963596d1973bd497";
+                GitHubAuthenticationOptions.ClientSecret = "0d4d963596d1973bd497";
+            });
 
-            //    services.AddAuthentication(SetAppAuthentication)
-            //            .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme,
-            //                       SetAppCookieAuthentication)
-
-            //            .AddGitHub(GitHubAuthenticationDefaults.AuthenticationScheme,
-            //                        SetGitHubAuthentication);
+          
         }
 
 
