@@ -50,8 +50,6 @@ namespace EasyLearningLTD
                 GitHubAuthenticationOptions.ClientId = "0d4d963596d1973bd497";
                 GitHubAuthenticationOptions.ClientSecret = "0d4d963596d1973bd497";
             });
-
-          
         }
 
 

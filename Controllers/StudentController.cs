@@ -6,21 +6,11 @@ using System.Threading.Tasks;
 
 namespace EasyLearningLTD.Controllers
 {
-    public class TutorController : Controller
+    public class StudentController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult TutorRegistration()
-        {
-            return View();
-        }
-
-        public IActionResult TutorRating()
-        {
-            return View();
-        }
-
     }
 }

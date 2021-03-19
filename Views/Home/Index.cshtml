@@ -2,5 +2,32 @@
     ViewData["Title"] = "Home Page";
 }
 
-    @Html.Partial("StudentServices")
+<div class="container">
+    <h2 style="color:black">Search Product/Category</h2>
+</div>
+@*@Html.Partial("StudentServices")*@
+<partial name="StudentServices">
 
+
+<div class="container">
+    <input type="text" placeholder="Enter Keyword" name="SearchKey" class="inputcomn houseText form-control" />
+    <div class="searchIcon">
+        <button type="button" class="searchBtn">
+            go
+        </button>
+    </div>
+</div>
+<br />
+<div class="col-md-12">
+ <h4><small> Our</small> Trending courses</h4>
+       
+
+
+<div class="card">
+    <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>Tailored Jeans</h1>
+    <p class="price">$19.99</p>
+    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+    <p><button>Add to Cart</button></p>
+</div>
+</div>

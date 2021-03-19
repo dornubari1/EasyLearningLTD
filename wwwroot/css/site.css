@@ -65,7 +65,7 @@ html {
 body {
     /* Margin bottom by footer height */
      margin-bottom: 60px;
- 
+   
 }
 
 .footer {
@@ -147,7 +147,7 @@ form.example::after {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color:ghostwhite;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -175,3 +175,38 @@ form.example::after {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 160px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.status {
+    color: green;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+    .card button:hover {
+        opacity: 0.7;
+    }
