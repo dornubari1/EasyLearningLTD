@@ -12,5 +12,10 @@ namespace EasyLearningLTD.Controllers
         {
             return View();
         }
+
+        public IActionResult StudentRegistration()
+        {
+            return View();
+        }
     }
 }

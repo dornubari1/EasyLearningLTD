@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    @*<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">*@
+
 
     <style>
         #example1 {
@@ -21,7 +22,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-success border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #ebebeb">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EasyLearningLTD</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -33,9 +34,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-home" aria-hidden="true"></i>  Home </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Services"> <i class="fa fa-clone" aria-hidden="true"></i>Services</> </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" asp-area="" asp-controller="" asp-action="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-clone" aria-hidden="true"></i>Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="StudentServices"><i class="fa fa-clone" aria-hidden="true"></i>Student Services</> </a>
+                                <a class="dropdown-item" asp-controller="Tutor" asp-action="TutorRegistration"><i class="fa fa-user-plus" aria-hidden="true"></i>Tutor Registration</a>
+                                <a class="dropdown-item" asp-controller="Tutor" asp-action="TutorRating"><i class="fa fa-star-half-o" aria-hidden="true"></i>Tutor Rating</a>
+                            </div>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"> <i class="fa fa-user-secret" aria-hidden="true"></i>Privacy</a>
                         </li>

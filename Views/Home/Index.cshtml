@@ -2,32 +2,37 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container">
-    <h2 style="color:black">Search Product/Category</h2>
-</div>
-@*@Html.Partial("StudentServices")*@
-<partial name="StudentServices">
-
-
-<div class="container">
-    <input type="text" placeholder="Enter Keyword" name="SearchKey" class="inputcomn houseText form-control" />
-    <div class="searchIcon">
-        <button type="button" class="searchBtn">
-            go
-        </button>
+<div container style="height:805px">
+    <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="height:400px">
+                <img src="..." class="d-block w-100">
+            </div>
+            <div class="carousel-item" style="height:400px">
+                <img src="..." class="d-block w-100">
+            </div>
+            <div class="carousel-item" style="height:400px">
+                <img src="..." class="d-block w-100">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-</div>
-<br />
-<div class="col-md-12">
- <h4><small> Our</small> Trending courses</h4>
-       
 
+    <br />
+    <br />
 
-<div class="card">
-    <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-    <h1>Tailored Jeans</h1>
-    <p class="price">$19.99</p>
-    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-    <p><button>Add to Cart</button></p>
-</div>
+    <partial name="trendingCourses" />
+
 </div>

@@ -178,7 +178,7 @@ form.example::after {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 160px;
+    max-width: 200px;
     margin: auto;
     text-align: center;
     font-family: arial;
@@ -210,3 +210,11 @@ form.example::after {
     .card button:hover {
         opacity: 0.7;
     }
+
+* {
+    box-sizing: border-box
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}

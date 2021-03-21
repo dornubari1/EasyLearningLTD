@@ -25,7 +25,7 @@ namespace EasyLearningLTD.Controllers
         }
 
         [Authorize]
-        public IActionResult Services()
+        public IActionResult StudentServices()
         {
             return View();
         }
@@ -45,9 +45,7 @@ namespace EasyLearningLTD.Controllers
             return View();
         }
 
-
-        [Authorize]
-        public IActionResult StudentServices()
+        public IActionResult TrendingCourses()
         {
             return View();
         }

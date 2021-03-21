@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,14 @@ namespace EasyLearningLTD.Controllers
         {
             return View();
         }
+
+        [Authorize]
         public IActionResult TutorRegistration()
         {
             return View();
         }
 
+        [Authorize]
         public IActionResult TutorRating()
         {
             return View();
