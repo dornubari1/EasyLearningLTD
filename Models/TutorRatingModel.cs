@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Text;
-
+using EasyLearningLTD.Domain;
 
 namespace EasyLearningLTD.Models
 {
@@ -34,6 +34,22 @@ namespace EasyLearningLTD.Models
         public int Workload { get; set; }
 
         public int OverAllRating { get; set; }
+
+        public TutorRatingDomain ToTutorRatingDomain()
+        {
+            return new TutorRatingDomain()
+            {
+                FirstName = this.FirstName,
+                LastName = this.LastName,
+                TutorID = this.TutorID,
+                CourseID = this.CourseID,
+                Helpfulness = this.Helpfulness,
+                Quality = this.Quality,
+                Professionalism = this.Professionalism,
+                Workload = this.Workload,
+                OverAllRating = this.OverAllRating
+            };
+        }
 
     }
  

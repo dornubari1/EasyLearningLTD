@@ -28,9 +28,19 @@ namespace EasyLearningLTD
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //using (var context = new TutorDb())
+            //{
+            //    context.Database.EnsureCreated();
+            //}
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+            //services.AddDbContext<TutorDb>(options =>
+            //   options.UseSqlServer(
+            //       Configuration.GetConnectionString("TutorConnection")));
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)

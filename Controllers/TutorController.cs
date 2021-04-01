@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using EasyLearningLTD.Data;
+using EasyLearningLTD.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,20 +11,33 @@ namespace EasyLearningLTD.Controllers
 {
     public class TutorController : Controller
     {
+        private readonly ApplicationDbContext _contextDb;
+
+        public TutorController(ApplicationDbContext ratingDb)
+        {
+            _contextDb = ratingDb;
+        }
+
+
+
         public IActionResult Index()
         {
             return View();
         }
 
         [Authorize]
-        public IActionResult TutorRegistration()
+        [HttpGet]
+        public IActionResult TutorRating()
         {
             return View();
         }
 
         [Authorize]
-        public IActionResult TutorRating()
+        [HttpPost]
+        public IActionResult TutorRating(TutorRatingModel model)
         {
+            _contextDb.TutorRatingTable.Add(model.ToTutorRatingDomain());
+            _contextDb.SaveChanges();
             return View();
         }
 

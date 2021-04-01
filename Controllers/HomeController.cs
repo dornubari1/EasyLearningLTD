@@ -7,6 +7,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using EasyLearningLTD.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace EasyLearningLTD.Controllers
 {
@@ -20,12 +22,6 @@ namespace EasyLearningLTD.Controllers
         }
        
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        [Authorize]
-        public IActionResult StudentServices()
         {
             return View();
         }

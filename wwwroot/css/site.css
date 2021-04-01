@@ -64,8 +64,8 @@ html {
 
 body {
     /* Margin bottom by footer height */
-     margin-bottom: 60px;
-   
+    margin-bottom: 60px;
+    background-color: #ebebeb;
 }
 
 .footer {
@@ -218,3 +218,4 @@ form.example::after {
 .active, .dot:hover {
     background-color: #717171;
 }
+
