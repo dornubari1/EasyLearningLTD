@@ -1,0 +1,35 @@
+﻿@model CoursesModel
+
+@{
+    ViewData["Title"] = "Courses";
+}
+<h4>CourseDomain</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Courses">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CourseTitle" class="control-label"></label>
+                <input asp-for="CourseTitle" class="form-control" />
+                <span asp-validation-for="CourseTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                
+                    <button class="btn btn-primary"> Summit</button>
+               
+            </div>
+        </form>
+    </div>
+</div>
