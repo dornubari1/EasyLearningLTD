@@ -28,5 +28,7 @@ namespace EasyLearningLTD.Domain
         public int Workload { get; internal set; }
 
         public int OverAllRating { get; internal set; }
+
+       
     }
 }

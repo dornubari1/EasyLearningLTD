@@ -22,6 +22,7 @@ namespace EasyLearningLTD.Controllers
 
         public async Task<IActionResult> Index()
         {
+          
             return View(await _context.TutorRegistrationTable.ToListAsync());
         }
 
@@ -117,6 +118,10 @@ namespace EasyLearningLTD.Controllers
             }
             return View(tutorRegistrationDomain);
         }
+
+
+       
+
 
         // GET: Tutors/Delete/5
         [Authorize]

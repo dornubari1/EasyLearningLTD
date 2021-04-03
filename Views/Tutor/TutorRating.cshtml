@@ -11,9 +11,11 @@
         <a class="nav-link" asp-controller="Tutors" asp-action="TutorRegistration">Tutor Registration</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Tutor Rating</a>
+        <a class="nav-link active" aria-current="page" href="#">Rate Your Tuto</a>
     </li>
-
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Tutor" asp-action="DisplayRating">View Tutor Rating</a>
+    </li>
 </ul>
 <br />
 
@@ -22,8 +24,12 @@
 <p> Please rating your Tutor</p>
 <p> All field are <strong style="color:red"> required</strong></p>
 
+
+
 <form asp-action="TutorRating" method="post" asp-antiforgery="true" role="form">
-    <div asp-validation-summary="All" class="text-danger"></div>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type=hidden name="ratingId">
+
 
     <div class="form-row">
         <div class="form-group col-md-4">

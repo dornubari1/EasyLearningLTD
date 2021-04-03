@@ -32,7 +32,7 @@ namespace EasyLearningLTD.Controllers
 
         [HttpGet]
         [Authorize]
-        public IActionResult Courses()
+        public IActionResult Courses() //to add couses to database
         {
             return View();
         }
@@ -55,12 +55,12 @@ namespace EasyLearningLTD.Controllers
         [Authorize]
         public async Task<IActionResult> SearchResult( string SearchTerm)
         {
-            //if (SearchTerm == default)
-            //{
-            //    return View(await _context.CourseTable.ToListAsync());
-            //}             
-
-            return View("CourseCard", await _context.CourseTable.Where(c=>c.CourseTitle.Contains(SearchTerm)).ToListAsync());
+            if (SearchTerm == null)
+            {
+                return View("CourseCard", await _context.CourseTable.ToListAsync());
+            }
+           
+            return View("CourseCard", await _context.CourseTable.Where(c => c.CourseTitle.Contains(SearchTerm)).ToListAsync());
         }
     }
 }

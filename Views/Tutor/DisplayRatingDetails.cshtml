@@ -1,0 +1,72 @@
+﻿@model EasyLearningLTD.Domain.TutorRatingDomain
+
+@{
+    ViewData["Title"] = "DisplayRatingDetails";
+}
+
+<h1>Tutor Rating Details</h1>
+
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TutorID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TutorID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CourseID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Helpfulness)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Helpfulness)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quality)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quality)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Professionalism)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Professionalism)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Workload)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Workload)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OverAllRating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OverAllRating)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="Tutor" asp-action="TutorRating">Rate Tutor</a> |
+    <a asp-action="DisplayRating">Back to List</a>
+</div>

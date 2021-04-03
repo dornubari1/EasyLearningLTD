@@ -1,9 +1,9 @@
-﻿@model IEnumerable<EasyLearningLTD.Domain.CourseDomain>
+﻿@model IEnumerable<EasyLearningLTD.Domain.TutorRatingDomain>
 
 
 <ul class="nav nav-pills">
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Student Services</a>
+        <a class="nav-link" asp-controller="Student" asp-action="CourseCard">Student Services</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" asp-controller="Tutors" asp-action="TutorRegistration">Tutor Registration</a>
@@ -12,13 +12,14 @@
         <a class="nav-link" asp-controller="Tutor" asp-action="TutorRating">Rate Your Tutor</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" asp-controller="Tutor" asp-action="DisplayRating">View Tutor Rating</a>
+        <a class="nav-link active" aria-current="page" href="#">View Tutor Rating</a>
     </li>
+
 
 </ul>
 <br />
 
-<h2 style="color:black">Search Products/Courses</h2>
+<h2 style="color:black">Tutor Ratings</h2>
 
 <form asp-action="SearchResult">
 
@@ -37,7 +38,6 @@
 
 
 
-
 <div class="card-deck">
     @foreach (var item in Model)
     {
@@ -45,13 +45,13 @@
             <div class="card h-100 w-100">
                 <img src="..." class="card-img-top" alt="">
                 <div class="card-body">
-                    <p>  @Html.DisplayFor(modelItem => item.CourseTitle)</p>
+                    <h5>  @Html.DisplayFor(modelItem => item.FirstName)  @Html.DisplayFor(modelItem => item.LastName)</h5>
 
-                    <p class="price"> @Html.DisplayFor(modelItem => item.Price)</p>
+                    <p> Overall Rating: @Html.DisplayFor(modelItem => item.OverAllRating) /5</p>
 
-                    <p class="status"> @Html.DisplayFor(modelItem => item.Status)</p>
+                    <p> TutorID: @Html.DisplayFor(modelItem => item.Id)</p>
 
-                    <p><button class="button">Buy</button></p>
+                    <a asp-action="DisplayRatingDetails" asp-route-id="@item.Id" > Detail</a>
                 </div>
             </div>
         </div>
