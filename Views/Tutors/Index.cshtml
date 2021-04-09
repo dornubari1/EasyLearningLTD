@@ -1,35 +1,18 @@
-﻿@model IEnumerable<EasyLearningLTD.Domain.TutorRegistrationDomain>
-
+﻿
 @{
     ViewData["Title"] = "Index";
 }
- 
-                
-<div class="card-deck">
-    @foreach (var item in Model)
-    {
-        <div class="col mb-4">
-            <div class="card h-100 w-100">
-                <img src="..." class="card-img-top" alt="">
-                <div class="card-body">
-                    <p>   @Html.DisplayFor(modelItem => item.FirstName)</p>
 
-                    <p> @Html.DisplayFor(modelItem => item.LastName)</p>
-                    <p> @Html.DisplayFor(modelItem => item.Email) </p>
-                    <p>  @Html.DisplayFor(modelItem => item.AvailableCourses)</p>
-                    <p>  @Html.DisplayFor(modelItem => item.Availability)</p>
-                    
-                    <p> @Html.DisplayFor(modelItem => item.Password) </p>
-                    <p>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </p>
 
-                   
-                </div>
-            </div>
-        </div>
-    }
-</div>
-                    
+
+<br />
+<h1><i>Thank you for registering</i></h1>
+<p> <p> We are happy to have you on are platform</p></p>
+
+<br />
+<br />
+
+
+<form>
+    <a asp-controller="Student" asp-action="CourseCard">Return to Student Services</a>
+</form>

@@ -14,6 +14,7 @@ namespace EasyLearningLTD.Controllers
     public class StudentController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _contextDb;
 
         public StudentController(ApplicationDbContext context)
         {
@@ -59,8 +60,53 @@ namespace EasyLearningLTD.Controllers
             {
                 return View("CourseCard", await _context.CourseTable.ToListAsync());
             }
-           
+
             return View("CourseCard", await _context.CourseTable.Where(c => c.CourseTitle.Contains(SearchTerm)).ToListAsync());
         }
+
+
+        //[HttpGet]
+        //public async Task<IActionResult> AddToCart(int? id)
+        //{
+
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var courseID = await _context.CourseTable.FindAsync(id);
+
+       
+        //    return View();
+
+        //    //return View(await _context.CourseTable.ToListAsync());
+        //}
+
+        //[HttpPost]
+        public async Task<IActionResult> AddToCart(int? id, AddToCartModel model)
+        {
+            if (id == null)
+            {
+                return View();
+            }
+            var addToCartModel = await _context.CourseTable.FindAsync(id);
+
+            model.Id = addToCartModel.Id;
+            model.CourseTitle = addToCartModel.CourseTitle;
+            model.Price = addToCartModel.Price;
+            model.Status = addToCartModel.Status;
+            model.Quantity += 1;
+
+            List<AddToCartModel> addToCarts = new List<AddToCartModel>
+            {
+                model
+            };
+
+
+            return View(addToCarts);
+
+        }
+
+       
     }
 }

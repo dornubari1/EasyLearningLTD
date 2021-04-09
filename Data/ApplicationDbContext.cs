@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using EasyLearningLTD.Domain;
 using System.Threading.Tasks;
+using EasyLearningLTD.Models;
 
 namespace EasyLearningLTD.Data
 {
@@ -14,9 +15,10 @@ namespace EasyLearningLTD.Data
             : base(options)
         {
         }
-        public DbSet<EasyLearningLTD.Domain.TutorRegistrationDomain> TutorRegistrationTable { get; set; }
-        public DbSet<EasyLearningLTD.Domain.TutorRatingDomain> TutorRatingTable { get; set; }
-        public DbSet<EasyLearningLTD.Domain.CourseDomain> CourseTable { get; set; }
+        public DbSet<TutorRegistrationDomain> TutorRegistrationTable { get; set; }
+        public DbSet<TutorRatingDomain> TutorRatingTable { get; set; }
+        public DbSet<CourseDomain> CourseTable { get; set; }
+        public DbSet<AddToCartDomain> CartTable { get; set; }
 
        
     }

@@ -1,21 +1,23 @@
 ﻿@model IEnumerable<EasyLearningLTD.Domain.CourseDomain>
 
 
-<ul class="nav nav-pills">
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Student Services</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="Tutors" asp-action="TutorRegistration">Tutor Registration</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="Tutor" asp-action="TutorRating">Rate Your Tutor</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" asp-controller="Tutor" asp-action="DisplayRating">View Tutor Rating</a>
-    </li>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Student Services</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Tutors" asp-action="TutorRegistration">Tutor Registration</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Rating" asp-action="TutorRating">Rate Your Tutor</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Rating" asp-action="DisplayRating">View Tutor Rating</a>
+        </li>
 
-</ul>
+    </ul>
+   
+
 <br />
 
 <h2 style="color:black">Search Products/Courses</h2>
@@ -52,6 +54,7 @@
                     <p class="status"> @Html.DisplayFor(modelItem => item.Status)</p>
 
                     <p><button class="button">Buy</button></p>
+                   <p> <a asp-action="AddToCart" asp-route-id="@item.Id"> Add to Cart</a></p>
                 </div>
             </div>
         </div>
