@@ -1,0 +1,140 @@
+﻿@model TutorRatingModel
+@{
+    ViewData["Title"] = "TutorRating";
+}
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Student" asp-action="CourseCard">Student Services</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Tutors" asp-action="TutorRegistration">Tutor Registration</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Rate Your Tuto</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Rating" asp-action="DisplayRating">View Tutor Rating</a>
+    </li>
+</ul>
+<br />
+
+<h1>Tutor Rating</h1>
+
+<p> Please rating your Tutor</p>
+<p> All field are <strong style="color:red"> required</strong></p>
+
+
+
+<form asp-action="TutorRating" method="post" asp-antiforgery="true" role="form">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type=hidden name="ratingId">
+
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" class="form-control" placeholder="tutor first name.." />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control" placeholder="tutor last name.." />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label asp-for="TutorID">Tutor ID</label>
+            <input asp-for="TutorID" class="form-control" placeholder="Your tutor ID.." />
+            <span asp-validation-for="TutorID" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label asp-for="CourseID">Course ID</label>
+            <input asp-for="CourseID" class="form-control" placeholder="Your course ID.." />
+            <span asp-validation-for="CourseID" class="text-danger"></span>
+        </div>
+
+    </div>
+
+    <p> On a scale of 1 to 5 please rate your experience base on the following criteria</p>
+    <p> 1 = Poor, 2 = Fair, 3 = Good, 4 = very Good, 5 = Excellent</p>
+
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label asp-for="Helpfulness"></label>
+            <select asp-for="Helpfulness" class="form-control">
+                <option selected></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select><span asp-validation-for="Helpfulness" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-2">
+            <label asp-for="Quality"></label>
+            <select asp-for="Quality" class="form-control">
+                <option selected></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select><span asp-validation-for="Quality" class="text-danger"></span>
+
+        </div>
+        <div class="form-group col-md-2">
+            <label asp-for="Workload">Work load</label>
+            <select asp-for="Workload" class="form-control">
+                <option selected></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select><span asp-validation-for="Workload" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-2">
+            <label asp-for="Professionalism"></label>
+            <select asp-for="Professionalism" class="form-control">
+                <option selected></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select><span asp-validation-for="Professionalism" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label asp-for="OverAllRating">Over all Rating</label>
+            <select asp-for="OverAllRating" class="form-control">
+                <option selected></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <span asp-validation-for="OverAllRating" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div>
+            <button class="btn btn-primary"> Summit</button>
+        </div>
+    </div>
+
+</form>
+
+<form>
+    <a asp-controller="Student" asp-action="CourseCard">Return to Student Services</a>
+</form>
+

@@ -1,0 +1,141 @@
+﻿@model EasyLearningLTD.Domain.TutorRatingDomain
+
+@{
+    ViewData["Title"] = "DisplayRatingDetails";
+}
+
+<h1>Tutor Rating Details</h1>
+
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TutorID) 
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CourseID)
+        </dd>
+        <dt class="col-sm-2">
+
+            @Html.DisplayNameFor(model => model.Helpfulness)
+        </dt>
+        <dd class="col-sm-10">
+
+        @if (Model.Helpfulness >= 4)
+        {
+            <strong style="color:green"> @Model.Helpfulness </strong><strong>/5</strong>
+        }
+
+        else if (@Model.Helpfulness >= 3 && @Model.Helpfulness < 4)
+        {
+            <strong style="color:orange">  @Model.Helpfulness </strong> <strong>/5</strong>
+        }
+
+        else
+        {
+            <strong style="color:Red">  @Model.Helpfulness </strong><strong>/5</strong>
+        }
+            
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quality)
+        </dt>
+        <dd class="col-sm-10">
+
+            @if (Model.Quality >= 4)
+            {
+                <strong style="color:green"> @Model.Quality </strong><strong>/5</strong>
+            }
+
+            else if (Model.Quality >= 3 && @Model.Quality < 4)
+            {
+                <strong style="color:orange">  @Model.Quality </strong> <strong>/5</strong>
+            }
+
+            else
+            {
+                <strong style="color:Red">  @Model.Quality </strong><strong>/5</strong>
+            }
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Professionalism)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Professionalism >= 4)
+            {
+                <strong style="color:green"> @Model.Professionalism </strong><strong>/5</strong>
+            }
+
+            else if (Model.Professionalism >= 3 && Model.Professionalism < 4)
+            {
+        <strong style="color:orange"> @Model.Professionalism </strong> <strong>/5</strong>
+            }
+
+            else
+            {
+        <strong style="color:Red">  @Model.Professionalism </strong><strong>/5</strong>
+            }
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Workload)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Workload >= 4)
+            {
+                <strong style="color:green"> @Model.Professionalism </strong><strong>/5</strong>
+            }
+
+            else if (Model.Workload >= 3 && Model.Workload < 4)
+            {
+                <strong style="color:orange"> @Model.Workload </strong> <strong>/5</strong>
+            }
+
+            else
+            {
+                <strong style="color:Red">  @Model.Workload </strong><strong>/5</strong>
+            }
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OverAllRating)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.OverAllRating >= 4)
+            {
+                <strong style="color:green"> @Model.OverAllRating </strong><strong>/5</strong>
+            }
+
+            else if (Model.OverAllRating >= 3 && Model.OverAllRating < 4)
+            {
+                <strong style="color:orange"> @Model.OverAllRating </strong> <strong>/5</strong>
+            }
+
+            else
+            {
+                <strong style="color:Red">  @Model.OverAllRating </strong><strong>/5</strong>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="Rating" asp-action="TutorRating">Rate Tutor</a> |
+    <a asp-action="DisplayRating">Back to List</a>
+</div>
